@@ -25,39 +25,31 @@ const AssignedJobs = ({ cartSize, setCartSize }) => {
     return  (
          
         <>
-        
-           
-            <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
-            
-                
-           
-            <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
+        <h1>All Assigned Jobs</h1>
+         <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
                 
                 {groups
                     ? groups.map((group) => {
                         
-                          return (
-                            <div key={group._id} className="card .d-flex" style={{ border:"none",fontFamily: 'Barlow Semi Condensed',width:'30vh'}}>
+                          return( 
+                          <>
+                              {group.signedup? 
+                            <div className="card border-dark mb-3" style={{maxWidth: "18rem"}}>
+                            <div className="card-header">{group.signedup}</div>
+                            <div className="card-body text-dark">
+                              <h5 className="card-title">{group.name}</h5>
+                              <h5 className="card-title">{group.deadline}</h5>
+                              <p className="card-text">{group.description}</p>
+                              
+                                    
                                
-                                <div className="card-body">
-                                    <div style={{display:"flex", justifyContent:"space-between"}}>
-                                    <span style={{marginRight: "8vh", fontSize: "3.5vh"}} className="card-title">{group.name}</span><span style={{fontSize:"2.5vh"}}
-                                     className="card-title">{group.deadline}</span>
-                                     </div>
-                                   <div>{group.signedup}</div>
-                                   
-                                    <p className="card-text" style={{fontSize:"2vh"}}>{group.description}</p>
-                                    
-                                    
-                                    
-                                    
                                 </div>
-                            </div>
+                            </div>:''}
+                            </>
                         );
                     })
                     : 'LOADING...'}
                     
-            </div>
             </div>
             
         </>

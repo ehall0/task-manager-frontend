@@ -35,18 +35,24 @@ function Cart(props) {
 
     return (
         <div className="Cart">
-           
-         <div style={{ margin:'50px 500px 200px 60px'}}>
-            <h2 style={{fontFamily: 'Barlow Semi Condensed', color:'red'}}>My Jobs</h2>
+           <h1>My Jobs</h1>
+         <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
+            
             
             {cart.map((group, index) => {
                 return (
                     <div key={index}>
-                        <h2>{userData.user.username}</h2>
-                        <h2>{group.name}</h2>
-                        <h3>{group.deadline}</h3>
-                        <h4>{group.description}</h4>
-                        <button className="btn btn-light" onClick={() => handleDelete(group._id)}>Remove Job</button>
+                         <div className="card border-success mb-3" style={{maxWidth: "18rem"}}>
+                            <div className="card-header">{group.signedup}</div>
+                            <div className="card-body text-success">
+                              <h5 className="card-title">{group.name}</h5>
+                              <h5 className="card-title">{group.deadline}</h5>
+                              <p className="card-text">{group.description}</p>
+                              <button className="btn btn-light" onClick={() => handleDelete(group._id)}>Remove Job</button>
+                                    
+                               
+                                </div>
+                            </div>
                     </div>
                 )
             })}

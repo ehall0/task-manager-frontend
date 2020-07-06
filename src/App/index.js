@@ -104,7 +104,7 @@ function App () {
             ></Route>
           </Switch> 
         </main>
-        <Footer />
+      
       </UserContext.Provider>
     </div>
   )
