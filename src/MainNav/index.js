@@ -14,7 +14,7 @@ class MainNav extends React.Component {
     render() {
         return (
             <html style={{scrollBehavior:"smooth"}}>
-            <nav className="navbar fixed-top navbar" style={{maxWidth:"60%"}}>
+            <nav className="navbar fixed-top navbar" style={{maxWidth:"40%" ,justifyContent:"space-between"}}>
                 {this.state.routes.map((route)=>{
                     return(
                         <Link 

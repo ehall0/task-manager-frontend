@@ -57,8 +57,7 @@ function Form ({ initialState, callMethod, groupId }) {
                 {userData.user.isAdmin ? '' : <>
                 <label htmlFor="signedup">Signup:</label>
                 <FormControl formValue={signedup} formHandler={setSignedup} /> 
-                 <label htmlFor="status">Status:</label>
-                 <FormControl formValue={status} formHandler={setStatus} /></>}
+                 </>}
                 <button className="btn btn-primary" style={{marginTop:"1rem"}}>Submit</button>
             </form>
             {isRedirect ? <Redirect to="/jobs" /> : ''}
