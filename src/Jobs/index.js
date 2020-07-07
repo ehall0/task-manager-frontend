@@ -9,7 +9,7 @@ const Jobs = ({ cartSize, setCartSize }) => {
     
     //Function to get products from API
     const getInfo = async () => {
-        const response = await fetch('http://localhost:3001/groups/');
+        const response = await fetch('https://job-manager-2020.herokuapp.com/groups/');
         const result = await response.json();
         setGroups(result);
     };
@@ -21,7 +21,7 @@ const Jobs = ({ cartSize, setCartSize }) => {
 
     // delete function
     const handleDelete = async (id) => {
-        const response = await fetch(`http://localhost:3001/groups/${id}`, {
+        const response = await fetch(`https://job-manager-2020.herokuapp.com/groups/${id}`, {
             method: 'DELETE',
         });
         getInfo();

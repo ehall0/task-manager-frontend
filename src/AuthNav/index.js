@@ -13,7 +13,7 @@ function AuthNav({ cartSize, setCartSize }) {
         const userId = userData.user._id;
         const loggedInUser = userData.user.username;
         const cart = await Axios.get(
-            `http://localhost:3001/users/cart/${userId}`
+            `https://job-manager-2020.herokuapp.com/users/cart/${userId}`
         )
         setUsername(loggedInUser)
         setCartSize(cart.data.length)

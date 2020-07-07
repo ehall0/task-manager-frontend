@@ -24,7 +24,7 @@ function Register() {
                 isAdmin
             }
             const response = await axios.post(
-                'http://localhost:3001/users/',
+                'https://job-manager-2020.herokuapp.com/users/',
                 JSON.stringify(user),
                 {
                     headers: {

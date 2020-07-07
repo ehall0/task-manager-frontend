@@ -29,7 +29,7 @@ function Form ({ initialState, callMethod, groupId }) {
             signedup,
             status
         }
-        let fetchUrl = 'http://localhost:3001/groups/';
+        let fetchUrl = 'https://job-manager-2020.herokuapp.com/groups/';
         if (callMethod === 'PUT') {
             fetchUrl += groupId;
         }

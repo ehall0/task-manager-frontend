@@ -10,7 +10,7 @@ const AssignedJobs = ({ }) => {
     
     //Function to get products from API
     const getInfo = async () => {
-        const response = await fetch('http://localhost:3001/groups/');
+        const response = await fetch('https://job-manager-2020.herokuapp.com/groups/');
         const result = await response.json();
         setGroups(result);
     };

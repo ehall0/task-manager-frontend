@@ -34,13 +34,13 @@ function App () {
         token = '';
       }
       const tokenRes = await axios.post(
-        'http://localhost:3001/auth/validateToken',
+        'https://job-manager-2020.herokuapp.com/auth/validateToken',
         null,
         { headers: { 'x-auth-token': token }},
       );
       if (tokenRes.data) {
         const userRes = await axios.get(
-          'http://localhost:3001/auth/',
+          'https://job-manager-2020.herokuapp.com/auth/',
           { headers: { 'x-auth-token': token },
         })
         setUserData({

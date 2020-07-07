@@ -10,7 +10,7 @@ function AddToCart({ group }) {
         if (userData.user) {
             const userId = userData.user._id;
             const response = await axios.post(
-                'http://localhost:3001/users/addToCart',
+                'https://job-manager-2020.herokuapp.com/users/addToCart',
                 {
                     userId,
                     group: group,

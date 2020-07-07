@@ -14,7 +14,7 @@ function Cart(props) {
     useEffect(() => {
         const getCart = async () => {
             const response = await axios.get(
-                `http://localhost:3001/users/cart/${userId}`
+                `https://job-manager-2020.herokuapp.com/users/cart/${userId}`
             )
             setCart(response.data) 
         }
@@ -27,7 +27,7 @@ function Cart(props) {
     
     // delete function
     async function handleDelete(id) {
-        const response = await axios.delete(`http://localhost:3001/users/${userId}/${id}`)
+        const response = await axios.delete(`https://job-manager-2020.herokuapp.com/users/${userId}/${id}`)
         setCart(response.data)
         setUserData(userData)
     };

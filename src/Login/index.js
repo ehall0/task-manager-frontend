@@ -24,7 +24,7 @@ function Login() {
                 isAdmin
             }
             const response = await axios.post(
-                'http://localhost:3001/auth/',
+                'https://job-manager-2020.herokuapp.com/auth/',
                 user
             )
             setUserData({
