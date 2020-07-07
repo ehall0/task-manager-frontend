@@ -13,7 +13,9 @@ import Login from '../Login';
 import Jobs from '../Jobs';
 import Cart from '../Cart';
 import Header from '../Header';
-import AssignedJobs from '../AssignedJobs'
+import AssignedJobs from '../AssignedJobs';
+
+
 function App () {
   // set initial user state
   const [userData, setUserData] = useState({
@@ -51,6 +53,7 @@ function App () {
   }, []);
 
   return (
+    <html style={{scrollBehavior:"smooth"}}>
     <div className="App">
       <UserContext.Provider value={{userData, setUserData}}>
         <div className="container-fluid justify-content-between" style={{display: 'inline-flex'}}>
@@ -106,7 +109,10 @@ function App () {
         </main>
       
       </UserContext.Provider>
+      
     </div>
+
+    </html>
   )
 }
 

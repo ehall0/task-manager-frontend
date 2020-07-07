@@ -13,17 +13,21 @@ class MainNav extends React.Component {
 
     render() {
         return (
-            <nav className="navbar" style={{inlineSize: '16rem'}}>
+            <html style={{scrollBehavior:"smooth"}}>
+            <nav className="navbar fixed-top navbar" style={{maxWidth:"60%"}}>
                 {this.state.routes.map((route)=>{
                     return(
                         <Link 
                             to={route.path} 
                             key={route.name}
-                            className="navbar-nav"
+                            className="navbar-brand"
                         >{route.name}</Link>
                     )
                 })}
+                <a className="navbar-brand" href="/home#about">Tips</a> 
+                
             </nav>
+            </html>
         )
     }
 }

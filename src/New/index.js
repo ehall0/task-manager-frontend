@@ -6,7 +6,8 @@ function New () {
         initialName: '',
         initialDescription: '',
         initialDeadline:'',
-        
+        initialStatus:'',
+        initialSignedup: ''
     }
 
     return (

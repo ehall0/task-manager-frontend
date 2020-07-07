@@ -10,7 +10,8 @@ function Edit (props) {
         initialName: group.name,
         initialDescription: group.description,
         initialDeadline: group.deadline,
-        initialSignedup: group.signedup
+        initialSignedup: group.signedup,
+        initialStatus: group.status
     }
     return (
         <>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import AddToCart from '../AddToCart';
 import UserContext from '../App/UserContext'
 import { useContext } from 'react'
-const AssignedJobs = ({ cartSize, setCartSize }) => {
+
+const AssignedJobs = ({ }) => {
     const { userData, setUserData } = useContext(UserContext);
     const [groups, setGroups] = React.useState(null);
     
@@ -19,22 +20,21 @@ const AssignedJobs = ({ cartSize, setCartSize }) => {
         getInfo()
     }, []);
 
- 
-    
+   
      
     return  (
          
         <>
-        <h1>All Assigned Jobs</h1>
-         <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
+        <h4 style={{textAlign:"center", marginTop:"4rem"}}>Assigned Jobs</h4>
+       
+         <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent:"center"}}>
                 
-                {groups
-                    ? groups.map((group) => {
+                {groups ? groups.map((group) => {
                         
                           return( 
                           <>
-                              {group.signedup? 
-                            <div className="card border-dark mb-3" style={{maxWidth: "18rem"}}>
+                          {group.signedup? 
+                            <div className="card border-dark mb-3" style={{maxWidth: "18rem", margin:"1rem"}}>
                             <div className="card-header">{group.signedup}</div>
                             <div className="card-body text-dark">
                               <h5 className="card-title">{group.name}</h5>
@@ -44,12 +44,13 @@ const AssignedJobs = ({ cartSize, setCartSize }) => {
                                     
                                
                                 </div>
-                            </div>:''}
+                            </div>: ""}
+                                       
                             </>
                         );
                     })
-                    : 'LOADING...'}
-                    
+                   
+                : 'LOADING...'}
             </div>
             
         </>

@@ -36,26 +36,42 @@ function AuthNav({ cartSize, setCartSize }) {
     }
 
     return (
-        <span className="AuthNav">
+        <>
+        
+        
+        
+        <nav class="navbar  navbar" style={{maxWidth:"40%", marginRight:"0rem", textAlign:"right" }}>
+        <ul class="nav flex-column">
+        <li class="nav-item" style={{marginBottom:"1rem"}}>
             {username ?
                 <>
-                    <span style={{margin: '0 1vh'}}>{username}</span>
-                    <button className="btn btn-warning" onClick={handleLogout} style={{marginRight:"1vh"}}>Logout</button>
+                    <span>{username}</span>
+                    <button className="btn btn-warning" onClick={handleLogout} style={{marginLeft:"1vh"}}>Logout</button>
                 </>
                 : (
                 <>
-                    <Link to="/login" className="btn btn-success" style={{marginRight:"1vh"}}>Login</Link>
-                    <Link to="/signup" className="btn btn-primary" style={{marginRight:"1vh", }}>Sign Up</Link>    
+                    <Link to="/login" className="btn btn-success" style={{marginLeft:"1vh"}}>Login</Link>
+                    <Link to="/signup" className="btn btn-primary" style={{marginLeft:"1vh", }}>Sign Up</Link>    
                 </>
                 )}
+            </li>
+            <li class="navbar-brand" >
+             
                 {userData.user.isAdmin? '': 
-                <Link to="/cart" >My Jobs</Link>}
+                <Link style={{textDecoration:"none"}} to="/cart"  >My Jobs</Link>}
+                </li>
+                <li class="navbar-brand">
                 {userData.user.isAdmin?
-                <Link to ="/assignedjobs">Assigned Jobs</Link>:''}
+                <Link style={{textDecoration:"none"}}  to ="/assignedjobs">Assigned Jobs</Link>:''}
                 {isLoggedOut ?
                     <Redirect to="/jobs" />
                     : ''}
-        </span>
+                </li>
+           
+            </ul>
+        </nav>
+        
+        </>
     )
 }
 
